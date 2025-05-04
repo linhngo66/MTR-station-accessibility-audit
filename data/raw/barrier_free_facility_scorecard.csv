@@ -1,0 +1,37 @@
+Item_Code,Facility_En,Tier,Points,Rationale
+VJ1,Tactile Guide Paths,1,3,Essential for visually impaired navigation
+VJ2,Escalator Audible Warning Signals,2,2,Important safety feature for visually impaired
+VJ3,Platform Tactile Yellow Lines,1,3,Critical safety feature at platform edges
+VJ4,Audible Device,2,2,Important for audio announcements
+VJ5,Braille,2,2,Important for blind passengers
+VJ6,Colour Contrast Grab Poles,3,1,Helpful but not critical
+VJ7,Buzzer,1,3,Emergency communication essential
+VJ8,Colour Contrast Inter-Car Barriers,3,1,Visual aid but not critical
+VIn1,Tactile Station Layout Maps,3,1,Supplementary to tactile paths
+VIn2,Modification of Obstructions,1,3,Critical for clear pathways
+MJ1,Wide Gates,1,3,Essential for wheelchair access
+MJ2,Portable or Movable Ramps,1,3,Critical backup for lift failures
+MJ3,Multi-Purpose Areas,3,1,Comfort feature
+MJ4,Accessible Toilets (Unpaid Area),2,2,Important but less critical than paid-area toilets
+MJ5,Accessible Toilets (Paid Area),1,3,Essential during travel
+MJ6,Accessible Toilets (Staff Area),3,1,Least critical toilet location
+MJ8,Socket for Powered Wheelchair,2,2,Important for wheelchair users
+MJ7,Accessible-car service (Contact Station Staff to arrange on arrival),2,2,Important staff-assisted service
+HJ1,Induction Loops,2,2,Important for hearing impaired
+HJ2,Passenger Info Display Systems,3,1,Supplementary information
+HJ3,Flashing System Maps,3,1,Visual aid but not critical
+HJ4,Active Line Diagrams,3,1,Supplementary information
+HJ5,On Train Info - Infopanels,3,1,Supplementary information
+HJ6,On Train Info - LCD Infopanels,3,1,Supplementary information
+HJ7,On Train Info - MTR In-train TV,3,1,Supplementary information
+HIn1,Information Cards,3,1,Supplementary information
+HJ8,On Train Info - OPIS (For LR),3,1,Supplementary information
+AJ1,Same Level,1,3,Critical for wheelchair boarding
+AJ2,Ramp,2,2,Important accessibility feature
+AJ3,Lift - Unpaid Area,1,3,Essential for station access
+AJ4,Lift - Unpaid Area (Non MTR managed facility),2,2,Important but less reliable
+AJ5,Stair Lift,2,2,Important alternative to elevators
+AJ6,Wheelchair Aid,1,3,Essential mobility assistance
+AJ7,Stair Lift (Non MTR managed facility),2,2,Important but less reliable
+AJ8,Lift - Paid Area,1,3,Essential for platform access
+AJ9,Vertical Lifting Platform,2,2,Important accessibility feature
