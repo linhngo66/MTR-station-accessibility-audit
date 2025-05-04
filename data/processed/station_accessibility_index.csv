@@ -1,12 +1,12 @@
 station_no,station_code,station_name_en,area,old_population_percentage,hearing_impared_facility,mobility_impared_facility,visually_impaired_facilities,system_accessibility,total_facility_score,facility_score_category,area_needs,area_adjustment_score,accessibility_index
-1,CEN,Central,Central and Western,19.279687056320537,6,10,18,6,40,Medium,Very High,-2,38
-2,ADM,Admiralty,Central and Western,19.279687056320537,8,10,17,8,43,High,Very High,3,46
-3,TST,Tsim Sha Tsui,Yau Tsim Mong,17.88782766290999,6,9,20,8,43,High,Very High,3,46
-4,JOR,Jordan,Yau Tsim Mong,17.88782766290999,6,8,18,6,38,Low,Very High,-3,35
-5,YMT,Yau Ma Tei,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Very High,-2,40
-6,MOK,Mong Kok,Yau Tsim Mong,17.88782766290999,6,10,18,6,40,Medium,Very High,-2,38
-7,SKM,Shek Kip Mei,Sham Shui Po,20.398292699900253,6,8,18,10,42,Medium,Very High,-2,40
-8,KOT,Kowloon Tong,Kowloon City,20.080655766448956,8,12,21,11,52,High,Very High,3,55
+1,CEN,Central,Central and Western,19.279687056320537,6,10,18,6,40,Medium,Low,0,40
+2,ADM,Admiralty,Central and Western,19.279687056320537,8,10,17,8,43,High,Low,1,44
+3,TST,Tsim Sha Tsui,Yau Tsim Mong,17.88782766290999,6,9,20,8,43,High,Low,1,44
+4,JOR,Jordan,Yau Tsim Mong,17.88782766290999,6,8,18,6,38,Low,Low,-1,37
+5,YMT,Yau Ma Tei,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Low,0,42
+6,MOK,Mong Kok,Yau Tsim Mong,17.88782766290999,6,10,18,6,40,Medium,Low,0,40
+7,SKM,Shek Kip Mei,Sham Shui Po,20.398292699900253,6,8,18,10,42,Medium,High,-1,41
+8,KOT,Kowloon Tong,Kowloon City,20.080655766448956,8,12,21,11,52,High,High,2,54
 9,LOF,Lok Fu,Wong Tai Sin,22.96227648831618,6,8,18,5,37,Low,Very High,-3,34
 10,WTS,Wong Tai Sin,Wong Tai Sin,22.96227648831618,6,8,18,8,40,Medium,Very High,-2,38
 11,DIH,Diamond Hill,Wong Tai Sin,22.96227648831618,8,10,18,10,46,High,Very High,3,49
@@ -14,20 +14,20 @@ station_no,station_code,station_name_en,area,old_population_percentage,hearing_i
 13,KOB,Kowloon Bay,Kwun Tong,21.947186875154124,6,8,18,13,45,High,Very High,3,48
 14,NTK,Ngau Tau Kok,Kwun Tong,21.947186875154124,6,10,18,5,39,Medium,Very High,-2,37
 15,KWT,Kwun Tong,Kwun Tong,21.947186875154124,6,8,18,8,40,Medium,Very High,-2,38
-16,PRE,Prince Edward,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Very High,-2,40
-17,SSP,Sham Shui Po,Sham Shui Po,20.398292699900253,6,8,17,8,39,Medium,Very High,-2,37
-18,CSW,Cheung Sha Wan,Sham Shui Po,20.398292699900253,6,8,18,6,38,Low,Very High,-3,35
-19,LCK,Lai Chi Kok,Sham Shui Po,20.398292699900253,6,8,18,10,42,Medium,Very High,-2,40
-20,MEF,Mei Foo,Sham Shui Po,20.398292699900253,8,11,18,10,47,High,Very High,3,50
+16,PRE,Prince Edward,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Low,0,42
+17,SSP,Sham Shui Po,Sham Shui Po,20.398292699900253,6,8,17,8,39,Medium,High,-1,38
+18,CSW,Cheung Sha Wan,Sham Shui Po,20.398292699900253,6,8,18,6,38,Low,High,-2,36
+19,LCK,Lai Chi Kok,Sham Shui Po,20.398292699900253,6,8,18,10,42,Medium,High,-1,41
+20,MEF,Mei Foo,Sham Shui Po,20.398292699900253,8,11,18,10,47,High,High,2,49
 21,LAK,Lai King,Kwai Tsing,22.078749813432083,6,10,18,6,40,Medium,Very High,-2,38
 22,KWF,Kwai Fong,Kwai Tsing,22.078749813432083,6,8,18,5,37,Low,Very High,-3,34
 23,KWH,Kwai Hing,Kwai Tsing,22.078749813432083,6,8,18,7,39,Medium,Very High,-2,37
-24,TWH,Tai Wo Hau,Tsuen Wan,18.134048123363762,6,8,18,6,38,Low,Very High,-3,35
-25,TSW,Tsuen Wan,Tsuen Wan,18.134048123363762,6,8,18,8,40,Medium,Very High,-2,38
-26,SHW,Sheung Wan,Central and Western,19.279687056320537,6,10,18,9,43,High,Very High,3,46
-27,WAC,Wan Chai,Wan Chai,21.223791955367588,6,8,18,6,38,Low,Very High,-3,35
-28,CAB,Causeway Bay,Wan Chai,21.223791955367588,6,8,18,6,38,Low,Very High,-3,35
-29,TIH,Tin Hau,Wan Chai,21.223791955367588,6,8,18,5,37,Low,Very High,-3,34
+24,TWH,Tai Wo Hau,Tsuen Wan,18.134048123363762,6,8,18,6,38,Low,Low,-1,37
+25,TSW,Tsuen Wan,Tsuen Wan,18.134048123363762,6,8,18,8,40,Medium,Low,0,40
+26,SHW,Sheung Wan,Central and Western,19.279687056320537,6,10,18,9,43,High,Low,1,44
+27,WAC,Wan Chai,Wan Chai,21.223791955367588,6,8,18,6,38,Low,High,-2,36
+28,CAB,Causeway Bay,Wan Chai,21.223791955367588,6,8,18,6,38,Low,High,-2,36
+29,TIH,Tin Hau,Wan Chai,21.223791955367588,6,8,18,5,37,Low,High,-2,35
 30,FOH,Fortress Hill,Eastern,23.358440190104663,6,8,18,6,38,Low,Very High,-3,35
 31,NOP,North Point,Eastern,23.358440190104663,6,10,18,6,40,Medium,Very High,-2,38
 32,QUB,Quarry Bay,Eastern,23.358440190104663,6,10,18,5,39,Medium,Very High,-2,37
@@ -37,62 +37,62 @@ station_no,station_code,station_name_en,area,old_population_percentage,hearing_i
 36,HFC,Heng Fa Chuen,Eastern,23.358440190104663,6,8,18,5,37,Low,Very High,-3,34
 37,CHW,Chai Wan,Eastern,23.358440190104663,6,8,18,5,37,Low,Very High,-3,34
 38,LAT,Lam Tin,Kwun Tong,21.947186875154124,6,10,18,5,39,Medium,Very High,-2,37
-39,HOK,Hong Kong,Central and Western,19.279687056320537,6,10,17,6,39,Medium,Very High,-2,37
-40,KOW,Kowloon,Yau Tsim Mong,17.88782766290999,6,10,18,9,43,High,Very High,3,46
-41,OLY,Olympic,Yau Tsim Mong,17.88782766290999,6,8,18,8,40,Medium,Very High,-2,38
+39,HOK,Hong Kong,Central and Western,19.279687056320537,6,10,17,6,39,Medium,Low,0,39
+40,KOW,Kowloon,Yau Tsim Mong,17.88782766290999,6,10,18,9,43,High,Low,1,44
+41,OLY,Olympic,Yau Tsim Mong,17.88782766290999,6,8,18,8,40,Medium,Low,0,40
 42,TSY,Tsing Yi,Kwai Tsing,22.078749813432083,6,10,17,5,38,Low,Very High,-3,35
-43,TUC,Tung Chung,Islands,14.732138038233613,5,8,17,8,38,Low,Very High,-3,35
-47,AIR,Airport,Islands,14.732138038233613,6,4,14,2,26,Low,Very High,-3,23
+43,TUC,Tung Chung,Islands,14.732138038233613,5,8,17,8,38,Low,Low,-1,37
+47,AIR,Airport,Islands,14.732138038233613,6,4,14,2,26,Low,Low,-1,25
 48,YAT,Yau Tong,Kwun Tong,21.947186875154124,6,10,18,11,45,High,Very High,3,48
-49,TIK,Tiu Keng Leng,Sai Kung,15.801053907986512,6,10,18,6,40,Medium,Very High,-2,38
-50,TKO,Tseung Kwan O,Sai Kung,15.801053907986512,6,8,18,6,38,Low,Very High,-3,35
-51,HAH,Hang Hau,Sai Kung,15.801053907986512,6,8,18,6,38,Low,Very High,-3,35
-52,POA,Po Lam,Sai Kung,15.801053907986512,6,8,18,5,37,Low,Very High,-3,34
-53,NAC,Nam Cheong,Sham Shui Po,20.398292699900253,7,10,18,6,41,Medium,Very High,-2,39
-54,SUN,Sunny Bay,Tsuen Wan,18.134048123363762,6,10,18,5,39,Medium,Very High,-2,37
-55,DIS,Disneyland Resort,Tsuen Wan,18.134048123363762,4,7,17,6,34,Low,Very High,-3,31
-56,AWE,AsiaWorld-Expo,Islands,14.732138038233613,6,8,18,6,38,Low,Very High,-3,35
-57,LHP,LOHAS Park,Sai Kung,15.801053907986512,6,8,18,8,40,Medium,Very High,-2,38
-64,HUH,Hung Hom,Yau Tsim Mong,17.88782766290999,6,12,18,11,47,High,Very High,3,50
-65,MKK,Mong Kok East,Yau Tsim Mong,17.88782766290999,6,10,21,6,43,High,Very High,3,46
-67,TAW,Tai Wai,Sha Tin,19.989001249989172,6,10,21,6,43,High,Very High,3,46
-68,SHT,Sha Tin,Sha Tin,19.989001249989172,6,10,21,8,45,High,Very High,3,48
-69,FOT,Fo Tan,Sha Tin,19.989001249989172,6,10,21,9,46,High,Very High,3,49
-71,UNI,University,Sha Tin,19.989001249989172,6,10,21,11,48,High,Very High,3,51
-72,TAP,Tai Po Market,Tai Po,18.485796442000822,6,10,21,6,43,High,Very High,3,46
-73,TWO,Tai Wo,Tai Po,18.485796442000822,6,10,21,5,42,Medium,Very High,-2,40
-74,FAN,Fanling,North,17.942970826564526,6,10,21,10,47,High,Very High,3,50
-75,SHS,Sheung Shui,North,17.942970826564526,6,10,21,8,45,High,Very High,3,48
-76,LOW,Lo Wu,North,17.942970826564526,6,12,21,9,48,High,Very High,3,51
-78,LMC,Lok Ma Chau,Yuen Long,15.023051131601006,6,12,21,9,48,High,Very High,3,51
-80,ETS,East Tsim Sha Tsui,Yau Tsim Mong,17.88782766290999,7,10,18,10,45,High,Very High,3,48
-81,SYP,Sai Ying Pun,Central and Western,19.279687056320537,6,10,18,8,42,Medium,Very High,-2,40
-82,HKU,HKU,Central and Western,19.279687056320537,6,10,18,8,42,Medium,Very High,-2,40
-83,KET,Kennedy Town,Central and Western,19.279687056320537,6,9,18,8,41,Medium,Very High,-2,39
-84,HOM,Ho Man Tin,Kowloon City,20.080655766448956,8,10,21,8,47,High,Very High,3,50
-85,WHA,Whampoa,Kowloon City,20.080655766448956,6,10,18,8,42,Medium,Very High,-2,40
+49,TIK,Tiu Keng Leng,Sai Kung,15.801053907986512,6,10,18,6,40,Medium,Low,0,40
+50,TKO,Tseung Kwan O,Sai Kung,15.801053907986512,6,8,18,6,38,Low,Low,-1,37
+51,HAH,Hang Hau,Sai Kung,15.801053907986512,6,8,18,6,38,Low,Low,-1,37
+52,POA,Po Lam,Sai Kung,15.801053907986512,6,8,18,5,37,Low,Low,-1,36
+53,NAC,Nam Cheong,Sham Shui Po,20.398292699900253,7,10,18,6,41,Medium,High,-1,40
+54,SUN,Sunny Bay,Tsuen Wan,18.134048123363762,6,10,18,5,39,Medium,Low,0,39
+55,DIS,Disneyland Resort,Tsuen Wan,18.134048123363762,4,7,17,6,34,Low,Low,-1,33
+56,AWE,AsiaWorld-Expo,Islands,14.732138038233613,6,8,18,6,38,Low,Low,-1,37
+57,LHP,LOHAS Park,Sai Kung,15.801053907986512,6,8,18,8,40,Medium,Low,0,40
+64,HUH,Hung Hom,Yau Tsim Mong,17.88782766290999,6,12,18,11,47,High,Low,1,48
+65,MKK,Mong Kok East,Yau Tsim Mong,17.88782766290999,6,10,21,6,43,High,Low,1,44
+67,TAW,Tai Wai,Sha Tin,19.989001249989172,6,10,21,6,43,High,High,2,45
+68,SHT,Sha Tin,Sha Tin,19.989001249989172,6,10,21,8,45,High,High,2,47
+69,FOT,Fo Tan,Sha Tin,19.989001249989172,6,10,21,9,46,High,High,2,48
+71,UNI,University,Sha Tin,19.989001249989172,6,10,21,11,48,High,High,2,50
+72,TAP,Tai Po Market,Tai Po,18.485796442000822,6,10,21,6,43,High,Low,1,44
+73,TWO,Tai Wo,Tai Po,18.485796442000822,6,10,21,5,42,Medium,Low,0,42
+74,FAN,Fanling,North,17.942970826564526,6,10,21,10,47,High,Low,1,48
+75,SHS,Sheung Shui,North,17.942970826564526,6,10,21,8,45,High,Low,1,46
+76,LOW,Lo Wu,North,17.942970826564526,6,12,21,9,48,High,Low,1,49
+78,LMC,Lok Ma Chau,Yuen Long,15.023051131601006,6,12,21,9,48,High,Low,1,49
+80,ETS,East Tsim Sha Tsui,Yau Tsim Mong,17.88782766290999,7,10,18,10,45,High,Low,1,46
+81,SYP,Sai Ying Pun,Central and Western,19.279687056320537,6,10,18,8,42,Medium,Low,0,42
+82,HKU,HKU,Central and Western,19.279687056320537,6,10,18,8,42,Medium,Low,0,42
+83,KET,Kennedy Town,Central and Western,19.279687056320537,6,9,18,8,41,Medium,Low,0,41
+84,HOM,Ho Man Tin,Kowloon City,20.080655766448956,8,10,21,8,47,High,High,2,49
+85,WHA,Whampoa,Kowloon City,20.080655766448956,6,10,18,8,42,Medium,High,-1,41
 86,OCP,Ocean Park,Southern,21.57719216949384,6,10,16,9,41,Medium,Very High,-2,39
 87,WCH,Wong Chuk Hang,Southern,21.57719216949384,6,10,16,9,41,Medium,Very High,-2,39
 88,LET,Lei Tung,Southern,21.57719216949384,6,10,16,8,40,Medium,Very High,-2,38
 89,SOH,South Horizons,Southern,21.57719216949384,6,10,16,6,38,Low,Very High,-3,35
-90,HIK,Hin Keng,Sha Tin,19.989001249989172,6,10,18,8,42,Medium,Very High,-2,40
-91,KAT,Kai Tak,Kowloon City,20.080655766448956,6,10,18,6,40,Medium,Very High,-2,38
-92,SUW,Sung Wong Toi,Kowloon City,20.080655766448956,6,10,18,10,44,High,Very High,3,47
-93,TKW,To Kwa Wan,Kowloon City,20.080655766448956,6,10,18,8,42,Medium,Very High,-2,40
-94,EXC,Exhibition Centre,Wan Chai,21.223791955367588,6,10,18,8,42,Medium,Very High,-2,40
-96,CKT,Che Kung Temple,Sha Tin,19.989001249989172,6,10,21,8,45,High,Very High,3,48
-97,STW,Sha Tin Wai,Sha Tin,19.989001249989172,6,10,21,5,42,Medium,Very High,-2,40
-98,CIO,City One,Sha Tin,19.989001249989172,6,10,21,5,42,Medium,Very High,-2,40
-99,SHM,Shek Mun,Sha Tin,19.989001249989172,7,10,21,5,43,High,Very High,3,46
-100,TSH,Tai Shui Hang,Sha Tin,19.989001249989172,7,10,21,6,44,High,Very High,3,47
-101,HEO,Heng On,Sha Tin,19.989001249989172,7,10,21,5,43,High,Very High,3,46
-102,MOS,Ma On Shan,Sha Tin,19.989001249989172,6,10,21,6,43,High,Very High,3,46
-103,WKS,Wu Kai Sha,Sha Tin,19.989001249989172,6,10,21,8,45,High,Very High,3,48
-111,AUS,Austin,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Very High,-2,40
-114,TWW,Tsuen Wan West,Tsuen Wan,18.134048123363762,6,10,18,6,40,Medium,Very High,-2,38
-115,KSR,Kam Sheung Road,Yuen Long,15.023051131601006,6,10,18,8,42,Medium,Very High,-2,40
-116,YUL,Yuen Long,Yuen Long,15.023051131601006,6,10,18,10,44,High,Very High,3,47
-117,LOP,Long Ping,Yuen Long,15.023051131601006,6,10,18,8,42,Medium,Very High,-2,40
-118,TIS,Tin Shui Wai,Yuen Long,15.023051131601006,6,10,18,10,44,High,Very High,3,47
-119,SIH,Siu Hong,Tuen Mun,19.325124931196594,6,10,18,11,45,High,Very High,3,48
-120,TUM,Tuen Mun,Tuen Mun,19.325124931196594,6,10,18,8,42,Medium,Very High,-2,40
+90,HIK,Hin Keng,Sha Tin,19.989001249989172,6,10,18,8,42,Medium,High,-1,41
+91,KAT,Kai Tak,Kowloon City,20.080655766448956,6,10,18,6,40,Medium,High,-1,39
+92,SUW,Sung Wong Toi,Kowloon City,20.080655766448956,6,10,18,10,44,High,High,2,46
+93,TKW,To Kwa Wan,Kowloon City,20.080655766448956,6,10,18,8,42,Medium,High,-1,41
+94,EXC,Exhibition Centre,Wan Chai,21.223791955367588,6,10,18,8,42,Medium,High,-1,41
+96,CKT,Che Kung Temple,Sha Tin,19.989001249989172,6,10,21,8,45,High,High,2,47
+97,STW,Sha Tin Wai,Sha Tin,19.989001249989172,6,10,21,5,42,Medium,High,-1,41
+98,CIO,City One,Sha Tin,19.989001249989172,6,10,21,5,42,Medium,High,-1,41
+99,SHM,Shek Mun,Sha Tin,19.989001249989172,7,10,21,5,43,High,High,2,45
+100,TSH,Tai Shui Hang,Sha Tin,19.989001249989172,7,10,21,6,44,High,High,2,46
+101,HEO,Heng On,Sha Tin,19.989001249989172,7,10,21,5,43,High,High,2,45
+102,MOS,Ma On Shan,Sha Tin,19.989001249989172,6,10,21,6,43,High,High,2,45
+103,WKS,Wu Kai Sha,Sha Tin,19.989001249989172,6,10,21,8,45,High,High,2,47
+111,AUS,Austin,Yau Tsim Mong,17.88782766290999,6,10,18,8,42,Medium,Low,0,42
+114,TWW,Tsuen Wan West,Tsuen Wan,18.134048123363762,6,10,18,6,40,Medium,Low,0,40
+115,KSR,Kam Sheung Road,Yuen Long,15.023051131601006,6,10,18,8,42,Medium,Low,0,42
+116,YUL,Yuen Long,Yuen Long,15.023051131601006,6,10,18,10,44,High,Low,1,45
+117,LOP,Long Ping,Yuen Long,15.023051131601006,6,10,18,8,42,Medium,Low,0,42
+118,TIS,Tin Shui Wai,Yuen Long,15.023051131601006,6,10,18,10,44,High,Low,1,45
+119,SIH,Siu Hong,Tuen Mun,19.325124931196594,6,10,18,11,45,High,Low,1,46
+120,TUM,Tuen Mun,Tuen Mun,19.325124931196594,6,10,18,8,42,Medium,Low,0,42
