@@ -25,3 +25,7 @@ All data sourced from [Hong Kong Open Data](https://data.gov.hk/).
 
 **Station prioritization**
 ![Index & Prioritization framework](images/index_prioritization_framework.png)
+
+## TBD
+- Project writeup
+- Incorporate geospatial data on bus stops to assess bus connectivity
