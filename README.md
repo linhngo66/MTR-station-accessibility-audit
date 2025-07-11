@@ -1,12 +1,20 @@
 # About the project
 
+*add what inspired the project*
+
 This project generates an Accessibility Index to evaluate how well MTR stations serve elderly and disabled populations across Hong Kong. By analyzing the availability of barrier-free facilities against district-level demographic needs, the index aims to:
 
 - Identifies priority stations requiring urgent accessibility upgrades
 - Highlights facility gaps
 - Guides equitable urban planning to align infrastructure with community needs
 
+# Executive summary
+
+*add summary*
+
 # Data overview
+
+## Data collection
 
 All data sourced from [Hong Kong Open Data](https://data.gov.hk/).
 
@@ -16,15 +24,26 @@ All data sourced from [Hong Kong Open Data](https://data.gov.hk/).
 |2021 Population census data| [API](https://data.gov.hk/en-data/dataset/hk-censtatd-census_geo-2021-population-census-by-dcd/resource/dd44d37e-85c7-49b7-b485-644db561cf80) | Hong Kong population by age group and district |
 |GeoCommunity database | [CSV](https://data.gov.hk/en-data/dataset/hk-landsd-openmap-development-hkms-digital-geocom) | MTR station location |
 
+## Data structure
+
+*add images of data structure*
 
 # Methodology
 
-**Accessibility index**
+## Accessibility index
+
+The Accessibility Index is calculated as the sum of two components:
 1. Facility availability scoring: Weighted points for each facilities based on criticality
 2. Area need adjustment scoring: Adjusted points based on facility availability score and %elderly population. Points are adjusted based on the framework below.
 
-**Station prioritization**
+## Station prioritization
 ![Index & Prioritization framework](images/index_prioritization_framework.png)
+
+# Key findings
+
+# Recommendations
+
+# Limitations
 
 ## TBD
 - Project writeup
