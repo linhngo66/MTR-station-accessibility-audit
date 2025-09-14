@@ -44,7 +44,7 @@ station_score |>
     geom_point()
 ```
 
-```{r}
+```{r facility-score}
 facility <- c("normal_system_accessibility","normal_hearing_impared_facility", "normal_mobility_impared_facility", "normal_visually_impaired_facility")
 
 facility_score <- station_score |> 
@@ -75,3 +75,60 @@ facility_score |>
     labs(x = "Facility", y = "Median score")
 ```
 
+```{r}
+station_score |> 
+    mutate(
+        priority_cate = case_when(
+            scaled_priority_ind >= quantile(scaled_priority_ind, 0.75) ~ "high",
+            scaled_priority_ind < quantile(scaled_priority_ind, 0.25) ~ "low",
+            TRUE ~ "medium"),
+        priority_cate = factor(priority_cate, levels = c("high", "medium", "low"))) |> 
+    group_by(area, priority_cate) |>
+    summarise(count = n()) |> 
+    ggplot(aes(x = factor(area), y = count, fill = priority_cate)) +
+    geom_col(position = "fill") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+    labs(x = "Area", y = "Count", fill = "Priority category")
+```
+
+```{r}
+# install.packages("ggmosaic") # if needed
+library(dplyr)
+library(ggplot2)
+library(ggmosaic)
+
+station_score |> 
+    mutate(
+        priority_cate = case_when(
+            scaled_priority_ind >= quantile(scaled_priority_ind, 0.75) ~ "high",
+            scaled_priority_ind < quantile(scaled_priority_ind, 0.25) ~ "low",
+            TRUE ~ "medium"),
+        priority_cate = factor(priority_cate, levels = c("high", "medium", "low"))) |> 
+  mutate(area = forcats::fct_infreq(area))
+
+ggplot(station_score) +
+  geom_mosaic(aes(x = product(area), fill = priority_cate), na.rm = TRUE) +
+  labs(x = "District", y = "Share within district",
+       fill = "Category") +
+  theme_minimal(base_size = 12) +
+  theme(panel.grid = element_blank(), 
+  x = element_blank(),
+  y = element_blank(),
+  axis.text.x = element_text(angle = 90, vjust = 0.5))
+```
+
+```{r}
+library(GGally)
+
+ggpairs(station_score, columns = facility)
+```
+
+```{r}
+# box plot
+station_score |> 
+    mutate(scaled_priority_ind = scaled_priority_ind * 100) |>
+    pivot_longer(cols = c("scaled_priority_ind", facility), names_to = "metric", values_to = "score") |>
+    ggplot(aes(x = metric, y = score, fill = metric)) +
+    geom_quasirandom() +
+    labs(x = "Metric", y = "Score")
+```
