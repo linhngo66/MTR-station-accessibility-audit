@@ -171,9 +171,20 @@ geo_comm = pd.read_csv('data/raw/GeoCom4.0_202503.csv')
 
 # Filter for MTR stations only
 mtr_station = geo_comm[(geo_comm['CLASS'] == 'TRS') & (geo_comm['TYPE'] == 'MTA')][['E_SITENAME', 'E_DISTRICT', 'EASTING', 'NORTHING']]
-mtr_station = mtr_station.drop_duplicates(subset = ['E_SITENAME', 'E_DISTRICT'], keep = 'first').dropna().reset_index()
+
+# Get MTR stations and number of exits
+exit_counts = mtr_station[['E_SITENAME', 'E_DISTRICT']].value_counts().reset_index()
+mtr_station = mtr_station.drop_duplicates(subset = ['E_SITENAME', 'E_DISTRICT'], keep = 'first').dropna()
 
 # Clean the MTR station name and district name to match with the format from census data and barrier-free facility data
+exit_counts['E_SITENAME'] = exit_counts['E_SITENAME'].str.replace(r'Mass Transit Railway | Station', '', regex=True).str.strip()
+exit_counts['E_DISTRICT'] = exit_counts['E_DISTRICT'].str.replace('District', '') \
+        .str.replace('&', 'and') \
+        .str.strip()
+exit_counts.rename(columns={'E_SITENAME': 'station_name_en',
+                            'E_DISTRICT': 'area',
+                            'count': 'exit_count'}, inplace=True)
+
 mtr_station['E_SITENAME'] = mtr_station['E_SITENAME'].str.replace(r'Mass Transit Railway | Station', '', regex=True).str.strip()
 mtr_station['E_DISTRICT'] = mtr_station['E_DISTRICT'].str.replace('District', '') \
         .str.replace('&', 'and') \
@@ -186,8 +197,12 @@ mtr_station.rename(columns={'E_SITENAME': 'station_name_en',
 
 # Drop inaccurate rows
 mtr_station = mtr_station[~((mtr_station['station_name_en'] == 'Choi Hung') & (mtr_station['area'] == 'Kwun Tong') |
-              (mtr_station['station_name_en'] == 'Kowloon Tong') & (mtr_station['area'] == 'Sham Shui Po'))] \
-    .reset_index()
+              (mtr_station['station_name_en'] == 'Kowloon Tong') & (mtr_station['area'] == 'Sham Shui Po'))]
+
+# Calculate % of exits by district
+exit_counts['district_exit_counts'] = exit_counts.groupby('area')['exit_count'].transform('sum')
+exit_counts['district_exit_percent'] = exit_counts['exit_count'] / exit_counts['district_exit_counts']
+exit_counts.drop(columns=['exit_count', 'district_exit_counts'], inplace=True)
 ```
 
 ```{python geospatial-transform}
@@ -203,7 +218,8 @@ mtr_station['long'], mtr_station['lat'] = transformer.transform(mtr_station['lon
 ```{python}
 barrier_free_facility_details = barrier_free_facility_details \
     .merge(mtr_station, how='left', on='station_name_en') \
-    .merge(old_population_by_area, how='left', on='area')
+    .merge(old_population_by_area, how='left', on='area') \
+    .merge(exit_counts, how='left', on=['station_name_en', 'area'])
 ```
 
 ## 2.5. Facility availability scoring
@@ -220,7 +236,7 @@ barrier_free_facility_details['facility_available_score'] = np.where(
 )
 
 #Widen the dataframe to get a score for each MTR station
-indices = ['station_no', 'station_code', 'station_name_en', 'area', 'long', 'lat', 'old_population_percentage']
+indices = ['station_no', 'station_code', 'station_name_en', 'area', 'long', 'lat', 'old_population_percentage', 'district_exit_percent']
 station_score = barrier_free_facility_details.pivot_table(index = indices,
                                     columns = 'facility_category_en',
                                     values = 'facility_available_score',
@@ -254,13 +270,9 @@ for col in facility_col:
     col_name = 'normal_' + col
     station_score[col_name] = (station_score[col] / max_scores[col]) * 100
 
+# Adjust demand for each stations based on their size/number of exits
+station_score['adjusted_demand'] = station_score['old_population_percentage'] * station_score['district_exit_percent']
+
 # Save station_score dataframe to a csv file
 station_score.to_csv('data/processed/station_score.csv', index=False)
-```
-
-# EDA
-
-## Accessibility index
-```{python}
-
 ```
