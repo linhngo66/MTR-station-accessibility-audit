@@ -201,8 +201,8 @@ mtr_station = mtr_station[~((mtr_station['station_name_en'] == 'Choi Hung') & (m
 
 # Calculate % of exits by district
 exit_counts['district_exit_counts'] = exit_counts.groupby('area')['exit_count'].transform('sum')
-exit_counts['district_exit_percent'] = exit_counts['exit_count'] / exit_counts['district_exit_counts']
-exit_counts.drop(columns=['exit_count', 'district_exit_counts'], inplace=True)
+exit_counts['district_exit_percent'] = (exit_counts['exit_count'] / exit_counts['district_exit_counts'])/100
+exit_counts.drop(columns=['district_exit_counts'], inplace=True)
 ```
 
 ```{python geospatial-transform}
@@ -236,7 +236,7 @@ barrier_free_facility_details['facility_available_score'] = np.where(
 )
 
 #Widen the dataframe to get a score for each MTR station
-indices = ['station_no', 'station_code', 'station_name_en', 'area', 'long', 'lat', 'old_population_percentage', 'district_exit_percent']
+indices = ['station_no', 'station_code', 'station_name_en', 'area', 'long', 'lat', 'old_population_percentage', 'district_exit_percent', 'exit_count']
 station_score = barrier_free_facility_details.pivot_table(index = indices,
                                     columns = 'facility_category_en',
                                     values = 'facility_available_score',
@@ -269,9 +269,20 @@ station_score['normal_facility_score'] = (station_score['total_facility_score']/
 for col in facility_col:
     col_name = 'normal_' + col
     station_score[col_name] = (station_score[col] / max_scores[col]) * 100
+```
 
+## 2.6. Adjust demand for each stations based on their size
+
+- Number of exits is used as a proxy for the size of the station
+```{python adjust-demand}
 # Adjust demand for each stations based on their size/number of exits
-station_score['adjusted_demand'] = station_score['old_population_percentage'] * station_score['district_exit_percent']
+station_score['adjusted_demand'] = station_score['old_population_percentage'] * (station_score['district_exit_percent']/100)
+
+# Calculate the priority index
+station_score['priority_ind'] = station_score['adjusted_demand'] * (100 - station_score['normal_facility_score'])
+
+# Calculate the scaled priority index
+station_score['scaled_priority_ind'] = (station_score['priority_ind'] - station_score['priority_ind'].min()) / (station_score['priority_ind'].max() - station_score['priority_ind'].min())
 
 # Save station_score dataframe to a csv file
 station_score.to_csv('data/processed/station_score.csv', index=False)

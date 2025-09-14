@@ -1,0 +1,77 @@
+```{r}
+library(tidyverse)
+library(ggbeeswarm)
+
+# Import data
+station_score <- read_csv('data/processed/station_score.csv')
+```
+
+```{r}
+# Density plot of priority index
+station_score |> 
+    ggplot(aes(x = scaled_priority_ind)) +
+    geom_density() +
+    geom_vline(xintercept = median(station_score$scaled_priority_ind), color = 'red') +
+    geom_vline(xintercept = quantile(station_score$scaled_priority_ind, 0.25), color = 'blue') +
+    geom_vline(xintercept = quantile(station_score$scaled_priority_ind, 0.75), color = 'blue') +
+    labs(x = 'Priority index', y = 'Density')
+```
+
+```{r}
+station_score |> 
+    ggplot(aes(x = adjusted_demand, y = normal_facility_score)) +
+    geom_point() +
+    geom_vline(xintercept = median(station_score$adjusted_demand)) +
+    geom_hline(yintercept = median(station_score$normal_facility_score))
+```
+
+```{r station-benchmark}
+#Top 10 stations by facility score
+top10_station <- station_score |> 
+    arrange(desc(normal_facility_score)) |> 
+    head(10) |> 
+    select(station_name_en, area, normal_facility_score) 
+
+bottom10_station <- station_score |> 
+    arrange(normal_facility_score) |> 
+    head(10) |> 
+    select(station_name_en, area, normal_facility_score) 
+```
+
+```{r}
+station_score |> 
+    ggplot(aes(x = normal_facility_score, y = scaled_priority_ind)) + 
+    geom_point()
+```
+
+```{r}
+facility <- c("normal_system_accessibility","normal_hearing_impared_facility", "normal_mobility_impared_facility", "normal_visually_impaired_facility")
+
+facility_score <- station_score |> 
+    select(station_name_en, area, facility) |> 
+    pivot_longer(cols = all_of(facility), names_to = "facility", values_to = "score")
+
+facility_score |> 
+    group_by(area, facility) |> 
+    summarise(median_score = median(score)) |> 
+    ggplot(aes(x = fct_reorder(facility, median_score), y = median_score)) +
+    geom_bar(stat = "identity") +
+    theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
+    labs(x = "Facility", y = "Median score")
+```
+
+```{r}
+high_priority <- station_score |> 
+    filter(scaled_priority_ind > quantile(station_score$scaled_priority_ind, 0.75)) |> 
+    pull(station_name_en)
+
+facility_score |> 
+    filter(station_name_en %in% high_priority) |> 
+    group_by(area, facility) |> 
+    summarise(median_score = median(score)) |> 
+    ggplot(aes(x = fct_reorder(facility, median_score), y = median_score)) +
+    geom_bar(stat = "identity") +
+    theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
+    labs(x = "Facility", y = "Median score")
+```
+
