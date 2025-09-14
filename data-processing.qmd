@@ -1,0 +1,266 @@
+---
+title: "Data Processing"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+  code-fold: true
+  cache: true
+---
+
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import requests
+import json
+from pyproj import Transformer
+import geopandas as gpd
+```
+
+# Data cleaning and transformation
+
+## 2.1. MTR barrier-free facilities
+
+- `barrier_free_facility` contains records of accessibility features (elevators, ramps, etc.) available at each station
+- `barrier_free_facility_category` provides standardized classifications for accessibility facilities
+- `barrier_free_facility_scorecard` is a custom-developed dataset assigning weighted scores to each facility type based on its importance for elderly passengers (e.g., elevators = 3 points).
+- `mtr_lines_and_stations` contains information on MTR stations and their code, enhancing the comprehensibility of the `barrier_free_facility` dataset
+
+*All datasets except the scorecard originate from Hong Kong open data portal.*
+
+```{python load-data}
+barrier_free_facility = pd.read_csv('data/raw/barrier_free_facilities.csv')
+barrier_free_facility_category = pd.read_csv('data/raw/barrier_free_facility_category.csv')
+barrier_free_facility_scorecard = pd.read_csv('data/raw/barrier_free_facility_scorecard.csv')
+mtr_lines_and_stations = pd.read_csv('data/raw/mtr_lines_and_stations.csv')
+```
+
+```{python transform-barrier-free-facilities}
+# Drop unnecessary columns
+barrier_free_facility.drop(columns=['Exit_Coordinate_X_Y', 'AJTextEn', 'AJTextZh'], inplace = True)
+
+# Rename columns
+barrier_free_facility.rename(columns={'Key': 'barrier_free_facility_id',
+                                    'Value' : 'is_available'}, inplace=True)
+
+# Rename Item_Code to Facility_Id for consistency
+barrier_free_facility_category.rename(columns={'Item_Code': 'Facility_Id'}, inplace=True)
+barrier_free_facility_scorecard.rename(columns={'Item_Code': 'Facility_Id'}, inplace=True)
+
+# MTR Lines and Stations
+mtr_lines_and_stations.dropna(axis=0, how='all', inplace=True)
+
+# Extract data on MTR station only, leaving out information on Line
+mtr_stations = mtr_lines_and_stations[['Station ID', 'Station Code', 'English Name']].drop_duplicates(keep='first')
+
+# Merge all 4 dataframes to get a comprehensive view of barrier-free facilities
+barrier_free_facility_details = barrier_free_facility \
+    .merge(barrier_free_facility_category, how='left', left_on='barrier_free_facility_id', right_on='Facility_Id') \
+    .merge(mtr_stations, how='left', left_on='Station_No', right_on='Station ID') \
+    .merge(barrier_free_facility_scorecard, how='left', left_on='barrier_free_facility_id', right_on='Facility_Id')
+    
+# Drop unnecessary columns
+barrier_free_facility_details.drop(columns=['Facility_Id_x', 'Facility_Id_y', 'Category_Zh', 'Facility_Zh', 'Sorting_Order', 'Station ID',
+                                            'Facility_En_x', 'Facility_En_y'],
+                                   inplace=True)
+
+# Rename columns
+barrier_free_facility_details.rename(columns={'barrier_free_facility_id': 'facility_id',
+                                              'Station_No': 'station_no',
+                                              'Category_Id': 'facility_category_id',
+                                              'Category_En': 'facility_category_en',
+                                              'Facility_En': 'facility_en',
+                                              'Station Code': 'station_code',
+                                              'English Name': 'station_name_en',
+                                              'Tier': 'tier',
+                                              'Points': 'point',
+                                              'Rationale': 'rationale'}, 
+                                     inplace=True)
+
+# Drop rows with NA station
+barrier_free_facility_details.dropna(subset=['station_name_en', 'station_code'], inplace=True)
+
+# Convert yes/no values to boolean
+barrier_free_facility_details['is_available'].replace({'Y': True, 'N': False}, inplace=True)
+```
+
+## 2.2. Population by age and district
+
+```{python data-import}
+try:
+    # Read data from Census API
+    census_url = "https://idds.census2021.gov.hk/api/query?cv.AGE=0-4,5-9,10-14,15-19,20-24,25-29,30-34,35-39,40-44,45-49,50-54,55-59,60-64,65-69,70-74,75-79,80-84,85-10000&cv.AREA=11,12,13,14,27,23,24,25,26,31,32,33,34,35,36,37,38,39&sv.RP=RP_NPER&period=2021&lang=en"
+
+    response = requests.get(census_url)
+    census_data = response.json()
+
+    # Save the json data to a file
+    with open('data/raw/census_data.json', 'w') as f:
+        json.dump(census_data, f)
+except:
+    # If the API call fails, read the data from a local file
+    with open('data/raw/census_data.json', 'r') as f:
+        census_data = json.load(f)
+
+# Convert json data to a dataframe
+census_df = pd.json_normalize(census_data['dataSet'])
+census_df['id'] = range(1, len(census_df) + 1)
+```
+
+```{python transform-census}
+### Output: population by age and district
+
+# Explode the list into separate rows
+explored_ccList = census_df.explode('ccList')
+
+# Expand dictionaries into columns
+final_ccList = pd.concat(
+    [explored_ccList.drop('ccList', axis=1), explored_ccList['ccList'].apply(pd.Series)],
+    axis=1
+)
+
+final_ccList.drop(columns=['ccCode', 'cvCode', 'cvDesc'], inplace=True)
+
+#Split the ccList into two separate dataframes
+# One for area and one for age
+final_ccList_area = final_ccList.iloc[range(0, len(final_ccList), 2)]
+final_ccList_age = final_ccList.iloc[range(1, len(final_ccList), 2)]
+
+# Merge the two dataframes back into the original census_df
+census_df = census_df.merge(final_ccList_area, how='left', on='id') \
+    .merge(final_ccList_age, how='left', on='id')
+
+# Drop unnecessary columns
+population_area_age = census_df[['ccDesc_y', 'ccDesc_x', 'figure']]
+population_area_age.rename(columns={'ccDesc_x': 'area', 
+                          'ccDesc_y': 'age_group', 
+                          'figure': 'population'}, inplace=True)
+```
+
+```{python pop-percent-by-area-age}
+### Output: population percentage by area and age
+
+# Total population by area
+population_area_age['population'] = population_area_age['population'].astype(int)
+population_by_area = population_area_age.groupby('area')['population'].sum().reset_index()
+
+# Calculate population percentage for each age group and district (area)
+population_area_age = population_area_age.merge(population_by_area, how='left', on='area', suffixes=('', '_total'))
+population_area_age['population_percentage'] = population_area_age['population'] / population_area_age['population_total'] * 100
+```
+
+```{python old-pop-percent}
+# Create a tag to identify age groups belonging to elderly population
+old_age_group = ['65 - 69', '70 - 74', '75 - 79', '80 - 84', '85+']
+population_area_age['is_old'] = population_area_age['age_group'].apply(lambda x: 1 if x in old_age_group else 0)
+
+# Calculate the percentage of elderly population in each area
+old_population_by_area = population_area_age[population_area_age['is_old']==True] \
+    .groupby('area')['population_percentage'].sum().reset_index()
+old_population_by_area.rename(columns={'population_percentage': 'old_population_percentage'}, inplace=True)
+```
+
+## 2.3. MTR station location
+
+```{python geocommm-transform}
+geo_comm = pd.read_csv('data/raw/GeoCom4.0_202503.csv')
+
+# Filter for MTR stations only
+mtr_station = geo_comm[(geo_comm['CLASS'] == 'TRS') & (geo_comm['TYPE'] == 'MTA')][['E_SITENAME', 'E_DISTRICT', 'EASTING', 'NORTHING']]
+mtr_station = mtr_station.drop_duplicates(subset = ['E_SITENAME', 'E_DISTRICT'], keep = 'first').dropna().reset_index()
+
+# Clean the MTR station name and district name to match with the format from census data and barrier-free facility data
+mtr_station['E_SITENAME'] = mtr_station['E_SITENAME'].str.replace(r'Mass Transit Railway | Station', '', regex=True).str.strip()
+mtr_station['E_DISTRICT'] = mtr_station['E_DISTRICT'].str.replace('District', '') \
+        .str.replace('&', 'and') \
+        .str.strip()
+
+mtr_station.rename(columns={'E_SITENAME': 'station_name_en', 
+                            'E_DISTRICT': 'area', 
+                            'EASTING': 'long', 
+                            'NORTHING' : 'lat'}, inplace=True)
+
+# Drop inaccurate rows
+mtr_station = mtr_station[~((mtr_station['station_name_en'] == 'Choi Hung') & (mtr_station['area'] == 'Kwun Tong') |
+              (mtr_station['station_name_en'] == 'Kowloon Tong') & (mtr_station['area'] == 'Sham Shui Po'))] \
+    .reset_index()
+```
+
+```{python geospatial-transform}
+# Convert long and lat from HK1980 to WGS84
+# Define transformer: from HK1980 Grid (EPSG:2326) to WGS84 (EPSG:4326)
+transformer = Transformer.from_crs("EPSG:2326", "EPSG:4326", always_xy=True)
+
+mtr_station['long'], mtr_station['lat'] = transformer.transform(mtr_station['long'], mtr_station['lat'])
+```
+
+## 2.4. Merge MTR barrier-free facility detail and elderly population data using MTR station location
+
+```{python}
+barrier_free_facility_details = barrier_free_facility_details \
+    .merge(mtr_station, how='left', on='station_name_en') \
+    .merge(old_population_by_area, how='left', on='area')
+```
+
+## 2.5. Facility availability scoring
+
+```{python facility-availability-scoring}
+# Calculate score for each facility based on availability and point
+# If the facility is available, the score is equal to the point
+# If the facility is not available, the score is 0
+
+barrier_free_facility_details['facility_available_score'] = np.where(
+    barrier_free_facility_details['is_available'],
+    barrier_free_facility_details['point'],
+    0
+)
+
+#Widen the dataframe to get a score for each MTR station
+indices = ['station_no', 'station_code', 'station_name_en', 'area', 'long', 'lat', 'old_population_percentage']
+station_score = barrier_free_facility_details.pivot_table(index = indices,
+                                    columns = 'facility_category_en',
+                                    values = 'facility_available_score',
+                                    aggfunc = 'sum')
+station_score = station_score.reset_index(names=indices)
+
+station_score.rename(columns={'Facilities for Hearing Impaired' : 'hearing_impared_facility',
+                              'Facilities for Mobility Impaired' : 'mobility_impared_facility',
+                              'Facilities for Visually Impaired': 'visually_impaired_facility',
+                              'System Accessibility': 'system_accessibility'}, inplace=True)
+
+# Calculate total facility score for each station
+facility_col = ['hearing_impared_facility', 
+                'mobility_impared_facility', 
+                'visually_impaired_facility', 
+                'system_accessibility']
+
+# Define the max score for each facility
+max_scores = {
+    'hearing_impared_facility': 12,
+    'visually_impaired_facility': 28,
+    'mobility_impared_facility': 25,
+    'system_accessibility': 39
+}
+
+station_score['total_facility_score'] = station_score[facility_col].sum(axis=1)
+station_score['normal_facility_score'] = (station_score['total_facility_score']/sum(max_scores.values())) * 100
+
+# Normalize the facility score to a scale of 0-100
+for col in facility_col:
+    col_name = 'normal_' + col
+    station_score[col_name] = (station_score[col] / max_scores[col]) * 100
+
+# Save station_score dataframe to a csv file
+station_score.to_csv('data/processed/station_score.csv', index=False)
+```
+
+# EDA
+
+## Accessibility index
+```{python}
+
+```
