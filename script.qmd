@@ -369,67 +369,8 @@ plt.show()
 ```
 
 ## 3.2. Which facilities needs to be prioritized?
-```{python}
-facility_cols = [
-    "normal_system_accessibility",
-    "normal_hearing_impared_facility",
-    "normal_mobility_impared_facility",
-    "normal_visually_impaired_facility",
-]
-
-facility_score = (
-    station_score[["station_name_en", "area"] + facility_cols]
-      .melt(id_vars=["station_name_en", "area"],
-            value_vars=facility_cols,
-            var_name="facility", value_name="score")
-)
-
-# summarize (median per facility)
-df = (facility_score
-      .groupby("facility", as_index=False)["score"]
-      .median()
-      .rename(columns={"score": "median_score"})
-      .sort_values("median_score"))
-
-# plot
-fig, ax = plt.subplots(figsize=(10, 6))
-bars = ax.bar(df["facility"], df["median_score"])
-
-x_labels = [
-    'Hearing Impaired',
-    'Visually Impaired',
-    'Mobility Impaired',
-    'System Accessibility'
-]
-plt.xticks(ticks=range(len(x_labels)), labels=x_labels, rotation=0, size = 8)
-
-# titles / labels
-ax.set_title("Median Accessibility Score by Facility", size = 9)
-ax.set_xlabel("Facility", size = 8)
-ax.set_ylabel(None)
-ax.set_yticks([])
-
-# remove gridlines
-ax.grid(False)
-ax.yaxis.grid(False)
-ax.xaxis.grid(False)
-
-# add value labels on bars
-for b in bars:
-    h = b.get_height()
-    ax.annotate(f"{h:.1f}",
-                xy=(b.get_x() + b.get_width()/2, h),
-                xytext=(0, 3), textcoords="offset points",
-                ha="center", va="bottom", fontsize=8)
-
-plt.tight_layout()
-plt.show()
-```
 
 ```{python}
-import pandas as pd
-import matplotlib.pyplot as plt
-
 # pretty labels + fixed order
 facility_type = [
     "normal_hearing_impared_facility",
@@ -443,8 +384,7 @@ label_map = {
     "normal_mobility_impared_facility": "Mobility Impaired",
     "normal_system_accessibility":      "System Accessibility"}
 
-def plot_facility_median(df, title="Median Accessibility Score by Facility"):
-    """Plot median facility scores for the given station dataframe."""
+def plot_facility_median(df, title="Median Availability Score by Facility"):
     # melt to long
     long = (
         df[["station_name_en", "area"] + facility_type]
@@ -458,7 +398,7 @@ def plot_facility_median(df, title="Median Accessibility Score by Facility"):
            .median()
            .rename(columns={"score": "median_score"}))
     med["facility"] = pd.Categorical(med["facility"], categories=facility_type, ordered=True)
-    med = med.sort_values("facility")
+    med = med.sort_values("median_score")
     x_labels = [label_map[f] for f in med["facility"]]
 
     # plot
@@ -487,17 +427,21 @@ def plot_facility_median(df, title="Median Accessibility Score by Facility"):
     plt.tight_layout()
     return fig, ax
 
-# 1) All stations
+# Plot all stations
 plot_facility_median(station_score)
-
-# 2) High-priority stations (minimal extra code)
-high = station_score[station_score["priority_bucket"].astype(str).str.lower().eq("high")]
-plot_facility_median(high, title="Median Accessibility Score by Facility — High Priority")
-
+plt.savefig('images/facility_score_median.png', dpi=300)
 ```
 
 ## 3.3. Among high priority stations, which facilities need to be prioritized?
 
 ```{python}
+high = station_score[station_score["priority_bucket"].astype(str).str.lower().eq("high")]
+plot_facility_median(high, title="Median Availability Score by Facility — High Priority Stations")
+plt.savefig('images/high_priority_facility_score.png', dpi=300)
+```
 
+```{python}
+low = station_score[station_score["priority_bucket"].astype(str).str.lower().eq("low")]
+plot_facility_median(low, title="Median Availability Score by Facility — Low Priority Stations")
+plt.savefig('images/low_priority_facility_score.png', dpi=300)
 ```
