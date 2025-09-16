@@ -318,8 +318,7 @@ station_score['priority_bucket'] = np.select(
 
 # make it an ordered categorical 
 station_score['priority_bucket'] = station_score['priority_bucket'].astype(
-    pd.CategoricalDtype(categories=['Low', 'Medium', 'High'], ordered=True)
-)
+    pd.CategoricalDtype(categories=['Low', 'Medium', 'High'], ordered=True))
 ```
 
 ```{python}
@@ -339,9 +338,19 @@ def props(key):
 fig, ax = plt.subplots(figsize=(12, 6))
 mosaic(data_for_mosaic, ax=ax, gap=0.01, properties=props, labelizer=lambda k: '')
 
-ax.set_title("MTR stations by priority level, broken down by district", size = 10)
+fig.suptitle(
+    "MTR stations by priority level, broken down by district",
+    fontsize=10, fontweight="bold",
+    x=0.06, y = 0.95, ha="left"
+)
+ax.set_title(
+    "Bar width is proportional to the number of stations in the district",
+    fontsize=8, color="dimgray",
+    loc="left",                 # <-- left align
+    pad=6,                      # <-- vertical gap from plot
+)
 ax.set_xlabel(None)
-ax.set_ylabel(None)
+ax.set_ylabel("Percentage of stations in district", size = 8)
 ax.set_yticks([])
 ax.tick_params(axis='x', labelsize=8)
 
@@ -366,82 +375,39 @@ leg = ax.legend(
 plt.subplots_adjust(right=0.82)
 plt.tight_layout()
 plt.show()
+plt.savefig('images/mosaic_district_priority.png', dpi=300)
 ```
 
-## 3.2. Which facilities needs to be prioritized?
+## 3.2. Which facilities needs to be prioritized across all priority group?
 
 ```{python}
-# pretty labels + fixed order
-facility_type = [
+# 1) Columns
+fac_cols = [
     "normal_hearing_impared_facility",
     "normal_visually_impaired_facility",
     "normal_mobility_impared_facility",
-    "normal_system_accessibility"]
+    "normal_system_accessibility",
+]
 
 label_map = {
     "normal_hearing_impared_facility":  "Hearing Impaired",
     "normal_visually_impaired_facility":"Visually Impaired",
     "normal_mobility_impared_facility": "Mobility Impaired",
-    "normal_system_accessibility":      "System Accessibility"}
+    "normal_system_accessibility":      "System Accessibility",
+}
 
-def plot_facility_median(df, title="Median Availability Score by Facility"):
-    # melt to long
-    long = (
-        df[["station_name_en", "area"] + facility_type]
-        .melt(id_vars=["station_name_en", "area"],
-              value_vars=facility_type,
-              var_name="facility", value_name="score")
-    )
+# 2) Long format, 1 row per station x facility
+long_tbl = (
+    station_score[["station_name_en", "area", "priority_bucket"] + fac_cols]
+      .melt(id_vars=["station_name_en", "area", "priority_bucket"],
+            value_vars=fac_cols,
+            var_name="facility_type", value_name="score_pct")
+      .assign(
+          facility_type=lambda d: d["facility_type"].map(label_map),
+          priority_group=lambda d: d["priority_bucket"].astype(str).str.title()
+      )[["station_name_en", "area", "priority_group", "facility_type", "score_pct"]]
+)
 
-    # summarize (median per facility), keep order
-    med = (long.groupby("facility", as_index=False)["score"]
-           .median()
-           .rename(columns={"score": "median_score"}))
-    med["facility"] = pd.Categorical(med["facility"], categories=facility_type, ordered=True)
-    med = med.sort_values("median_score")
-    x_labels = [label_map[f] for f in med["facility"]]
-
-    # plot
-    fig, ax = plt.subplots(figsize=(10, 6))
-    bars = ax.bar(range(len(med)), med["median_score"])
-
-    ax.set_xticks(range(len(med)))
-    ax.set_xticklabels(x_labels, rotation=0, fontsize=8)
-
-    ax.set_title(title, fontsize=9)
-    ax.set_xlabel("Facility", fontsize=8)
-    ax.set_ylabel(None)
-    ax.set_yticks([])
-
-    # no gridlines
-    ax.grid(False); ax.yaxis.grid(False); ax.xaxis.grid(False)
-
-    # value labels
-    for b in bars:
-        h = b.get_height()
-        ax.annotate(f"{h:.1f}",
-                    xy=(b.get_x() + b.get_width()/2, h),
-                    xytext=(0, 3), textcoords="offset points",
-                    ha="center", va="bottom", fontsize=8)
-
-    plt.tight_layout()
-    return fig, ax
-
-# Plot all stations
-plot_facility_median(station_score)
-plt.savefig('images/facility_score_median.png', dpi=300)
-```
-
-## 3.3. Among high priority stations, which facilities need to be prioritized?
-
-```{python}
-high = station_score[station_score["priority_bucket"].astype(str).str.lower().eq("high")]
-plot_facility_median(high, title="Median Availability Score by Facility — High Priority Stations")
-plt.savefig('images/high_priority_facility_score.png', dpi=300)
-```
-
-```{python}
-low = station_score[station_score["priority_bucket"].astype(str).str.lower().eq("low")]
-plot_facility_median(low, title="Median Availability Score by Facility — Low Priority Stations")
-plt.savefig('images/low_priority_facility_score.png', dpi=300)
+# Save the file
+long_tbl.to_csv('data/processed/facility_score.csv', index=False)
 ```

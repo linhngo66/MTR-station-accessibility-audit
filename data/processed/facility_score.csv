@@ -1,0 +1,389 @@
+station_name_en,area,priority_group,facility_type,score_pct
+Central,Central and Western,Medium,Hearing Impaired,66.66666666666666
+Admiralty,Central and Western,Medium,Hearing Impaired,83.33333333333334
+Tsim Sha Tsui,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Jordan,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Yau Ma Tei,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Mong Kok,Yau Tsim Mong,Medium,Hearing Impaired,66.66666666666666
+Shek Kip Mei,Sham Shui Po,Medium,Hearing Impaired,66.66666666666666
+Kowloon Tong,Kowloon City,Medium,Hearing Impaired,83.33333333333334
+Lok Fu,Wong Tai Sin,Medium,Hearing Impaired,66.66666666666666
+Wong Tai Sin,Wong Tai Sin,High,Hearing Impaired,66.66666666666666
+Diamond Hill,Wong Tai Sin,Medium,Hearing Impaired,83.33333333333334
+Choi Hung,Wong Tai Sin,High,Hearing Impaired,66.66666666666666
+Kowloon Bay,Kwun Tong,Low,Hearing Impaired,66.66666666666666
+Ngau Tau Kok,Kwun Tong,Medium,Hearing Impaired,66.66666666666666
+Kwun Tong,Kwun Tong,High,Hearing Impaired,66.66666666666666
+Prince Edward,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Sham Shui Po,Sham Shui Po,Medium,Hearing Impaired,66.66666666666666
+Cheung Sha Wan,Sham Shui Po,Medium,Hearing Impaired,66.66666666666666
+Lai Chi Kok,Sham Shui Po,Medium,Hearing Impaired,66.66666666666666
+Mei Foo,Sham Shui Po,Medium,Hearing Impaired,83.33333333333334
+Lai King,Kwai Tsing,High,Hearing Impaired,66.66666666666666
+Kwai Fong,Kwai Tsing,High,Hearing Impaired,66.66666666666666
+Kwai Hing,Kwai Tsing,High,Hearing Impaired,66.66666666666666
+Tai Wo Hau,Tsuen Wan,Medium,Hearing Impaired,66.66666666666666
+Tsuen Wan,Tsuen Wan,High,Hearing Impaired,66.66666666666666
+Sheung Wan,Central and Western,Medium,Hearing Impaired,66.66666666666666
+Wan Chai,Wan Chai,High,Hearing Impaired,66.66666666666666
+Causeway Bay,Wan Chai,High,Hearing Impaired,66.66666666666666
+Tin Hau,Wan Chai,Medium,Hearing Impaired,66.66666666666666
+Fortress Hill,Eastern,Low,Hearing Impaired,66.66666666666666
+North Point,Eastern,High,Hearing Impaired,66.66666666666666
+Quarry Bay,Eastern,Medium,Hearing Impaired,66.66666666666666
+Tai Koo,Eastern,High,Hearing Impaired,66.66666666666666
+Sai Wan Ho,Eastern,Low,Hearing Impaired,66.66666666666666
+Shau Kei Wan,Eastern,High,Hearing Impaired,66.66666666666666
+Heng Fa Chuen,Eastern,Low,Hearing Impaired,66.66666666666666
+Chai Wan,Eastern,Medium,Hearing Impaired,66.66666666666666
+Lam Tin,Kwun Tong,Medium,Hearing Impaired,66.66666666666666
+Hong Kong,Central and Western,Medium,Hearing Impaired,66.66666666666666
+Kowloon,Yau Tsim Mong,Medium,Hearing Impaired,66.66666666666666
+Olympic,Yau Tsim Mong,Medium,Hearing Impaired,66.66666666666666
+Tsing Yi,Kwai Tsing,High,Hearing Impaired,66.66666666666666
+Tung Chung,Islands,High,Hearing Impaired,58.333333333333336
+Airport,Islands,High,Hearing Impaired,66.66666666666666
+Yau Tong,Kwun Tong,Medium,Hearing Impaired,66.66666666666666
+Tiu Keng Leng,Sai Kung,Medium,Hearing Impaired,66.66666666666666
+Tseung Kwan O,Sai Kung,Medium,Hearing Impaired,66.66666666666666
+Hang Hau,Sai Kung,Medium,Hearing Impaired,66.66666666666666
+Po Lam,Sai Kung,Medium,Hearing Impaired,66.66666666666666
+Nam Cheong,Sham Shui Po,Medium,Hearing Impaired,75.0
+Sunny Bay,Tsuen Wan,Low,Hearing Impaired,66.66666666666666
+Disneyland Resort,Tsuen Wan,Low,Hearing Impaired,50.0
+AsiaWorld-Expo,Islands,Medium,Hearing Impaired,66.66666666666666
+LOHAS Park,Sai Kung,Medium,Hearing Impaired,66.66666666666666
+Hung Hom,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Mong Kok East,Yau Tsim Mong,Low,Hearing Impaired,66.66666666666666
+Tai Wai,Sha Tin,Medium,Hearing Impaired,66.66666666666666
+Sha Tin,Sha Tin,Medium,Hearing Impaired,66.66666666666666
+Fo Tan,Sha Tin,Low,Hearing Impaired,66.66666666666666
+University,Sha Tin,Low,Hearing Impaired,66.66666666666666
+Tai Po Market,Tai Po,High,Hearing Impaired,66.66666666666666
+Tai Wo,Tai Po,High,Hearing Impaired,66.66666666666666
+Fanling,North,Medium,Hearing Impaired,66.66666666666666
+Sheung Shui,North,High,Hearing Impaired,66.66666666666666
+Lo Wu,North,Low,Hearing Impaired,66.66666666666666
+Lok Ma Chau,Yuen Long,Low,Hearing Impaired,66.66666666666666
+East Tsim Sha Tsui,Yau Tsim Mong,Medium,Hearing Impaired,75.0
+Sai Ying Pun,Central and Western,Medium,Hearing Impaired,66.66666666666666
+HKU,Central and Western,Medium,Hearing Impaired,66.66666666666666
+Kennedy Town,Central and Western,Low,Hearing Impaired,66.66666666666666
+Ho Man Tin,Kowloon City,Medium,Hearing Impaired,83.33333333333334
+Whampoa,Kowloon City,Medium,Hearing Impaired,66.66666666666666
+Ocean Park,Southern,High,Hearing Impaired,66.66666666666666
+Wong Chuk Hang,Southern,High,Hearing Impaired,66.66666666666666
+Lei Tung,Southern,High,Hearing Impaired,66.66666666666666
+South Horizons,Southern,High,Hearing Impaired,66.66666666666666
+Hin Keng,Sha Tin,Low,Hearing Impaired,66.66666666666666
+Kai Tak,Kowloon City,Medium,Hearing Impaired,66.66666666666666
+Sung Wong Toi,Kowloon City,Medium,Hearing Impaired,66.66666666666666
+To Kwa Wan,Kowloon City,Medium,Hearing Impaired,66.66666666666666
+Exhibition Centre,Wan Chai,Medium,Hearing Impaired,66.66666666666666
+Che Kung Temple,Sha Tin,Medium,Hearing Impaired,66.66666666666666
+Sha Tin Wai,Sha Tin,Low,Hearing Impaired,66.66666666666666
+City One,Sha Tin,Low,Hearing Impaired,66.66666666666666
+Shek Mun,Sha Tin,Low,Hearing Impaired,75.0
+Tai Shui Hang,Sha Tin,Low,Hearing Impaired,75.0
+Heng On,Sha Tin,Low,Hearing Impaired,75.0
+Ma On Shan,Sha Tin,Low,Hearing Impaired,66.66666666666666
+Wu Kai Sha,Sha Tin,Low,Hearing Impaired,66.66666666666666
+Austin,Yau Tsim Mong,Medium,Hearing Impaired,66.66666666666666
+Tsuen Wan West,Tsuen Wan,High,Hearing Impaired,66.66666666666666
+Kam Sheung Road,Yuen Long,Medium,Hearing Impaired,66.66666666666666
+Yuen Long,Yuen Long,Medium,Hearing Impaired,66.66666666666666
+Long Ping,Yuen Long,Medium,Hearing Impaired,66.66666666666666
+Tin Shui Wai,Yuen Long,Medium,Hearing Impaired,66.66666666666666
+Siu Hong,Tuen Mun,High,Hearing Impaired,66.66666666666666
+Tuen Mun,Tuen Mun,High,Hearing Impaired,66.66666666666666
+Central,Central and Western,Medium,Visually Impaired,82.14285714285714
+Admiralty,Central and Western,Medium,Visually Impaired,78.57142857142857
+Tsim Sha Tsui,Yau Tsim Mong,Low,Visually Impaired,96.42857142857144
+Jordan,Yau Tsim Mong,Low,Visually Impaired,82.14285714285714
+Yau Ma Tei,Yau Tsim Mong,Low,Visually Impaired,82.14285714285714
+Mong Kok,Yau Tsim Mong,Medium,Visually Impaired,82.14285714285714
+Shek Kip Mei,Sham Shui Po,Medium,Visually Impaired,82.14285714285714
+Kowloon Tong,Kowloon City,Medium,Visually Impaired,100.0
+Lok Fu,Wong Tai Sin,Medium,Visually Impaired,82.14285714285714
+Wong Tai Sin,Wong Tai Sin,High,Visually Impaired,82.14285714285714
+Diamond Hill,Wong Tai Sin,Medium,Visually Impaired,82.14285714285714
+Choi Hung,Wong Tai Sin,High,Visually Impaired,82.14285714285714
+Kowloon Bay,Kwun Tong,Low,Visually Impaired,82.14285714285714
+Ngau Tau Kok,Kwun Tong,Medium,Visually Impaired,82.14285714285714
+Kwun Tong,Kwun Tong,High,Visually Impaired,82.14285714285714
+Prince Edward,Yau Tsim Mong,Low,Visually Impaired,82.14285714285714
+Sham Shui Po,Sham Shui Po,Medium,Visually Impaired,78.57142857142857
+Cheung Sha Wan,Sham Shui Po,Medium,Visually Impaired,82.14285714285714
+Lai Chi Kok,Sham Shui Po,Medium,Visually Impaired,82.14285714285714
+Mei Foo,Sham Shui Po,Medium,Visually Impaired,82.14285714285714
+Lai King,Kwai Tsing,High,Visually Impaired,82.14285714285714
+Kwai Fong,Kwai Tsing,High,Visually Impaired,82.14285714285714
+Kwai Hing,Kwai Tsing,High,Visually Impaired,82.14285714285714
+Tai Wo Hau,Tsuen Wan,Medium,Visually Impaired,82.14285714285714
+Tsuen Wan,Tsuen Wan,High,Visually Impaired,82.14285714285714
+Sheung Wan,Central and Western,Medium,Visually Impaired,82.14285714285714
+Wan Chai,Wan Chai,High,Visually Impaired,82.14285714285714
+Causeway Bay,Wan Chai,High,Visually Impaired,82.14285714285714
+Tin Hau,Wan Chai,Medium,Visually Impaired,82.14285714285714
+Fortress Hill,Eastern,Low,Visually Impaired,82.14285714285714
+North Point,Eastern,High,Visually Impaired,82.14285714285714
+Quarry Bay,Eastern,Medium,Visually Impaired,82.14285714285714
+Tai Koo,Eastern,High,Visually Impaired,82.14285714285714
+Sai Wan Ho,Eastern,Low,Visually Impaired,82.14285714285714
+Shau Kei Wan,Eastern,High,Visually Impaired,82.14285714285714
+Heng Fa Chuen,Eastern,Low,Visually Impaired,82.14285714285714
+Chai Wan,Eastern,Medium,Visually Impaired,82.14285714285714
+Lam Tin,Kwun Tong,Medium,Visually Impaired,82.14285714285714
+Hong Kong,Central and Western,Medium,Visually Impaired,78.57142857142857
+Kowloon,Yau Tsim Mong,Medium,Visually Impaired,82.14285714285714
+Olympic,Yau Tsim Mong,Medium,Visually Impaired,82.14285714285714
+Tsing Yi,Kwai Tsing,High,Visually Impaired,78.57142857142857
+Tung Chung,Islands,High,Visually Impaired,78.57142857142857
+Airport,Islands,High,Visually Impaired,64.28571428571429
+Yau Tong,Kwun Tong,Medium,Visually Impaired,82.14285714285714
+Tiu Keng Leng,Sai Kung,Medium,Visually Impaired,82.14285714285714
+Tseung Kwan O,Sai Kung,Medium,Visually Impaired,82.14285714285714
+Hang Hau,Sai Kung,Medium,Visually Impaired,82.14285714285714
+Po Lam,Sai Kung,Medium,Visually Impaired,82.14285714285714
+Nam Cheong,Sham Shui Po,Medium,Visually Impaired,82.14285714285714
+Sunny Bay,Tsuen Wan,Low,Visually Impaired,82.14285714285714
+Disneyland Resort,Tsuen Wan,Low,Visually Impaired,78.57142857142857
+AsiaWorld-Expo,Islands,Medium,Visually Impaired,82.14285714285714
+LOHAS Park,Sai Kung,Medium,Visually Impaired,82.14285714285714
+Hung Hom,Yau Tsim Mong,Low,Visually Impaired,82.14285714285714
+Mong Kok East,Yau Tsim Mong,Low,Visually Impaired,100.0
+Tai Wai,Sha Tin,Medium,Visually Impaired,100.0
+Sha Tin,Sha Tin,Medium,Visually Impaired,100.0
+Fo Tan,Sha Tin,Low,Visually Impaired,100.0
+University,Sha Tin,Low,Visually Impaired,100.0
+Tai Po Market,Tai Po,High,Visually Impaired,100.0
+Tai Wo,Tai Po,High,Visually Impaired,100.0
+Fanling,North,Medium,Visually Impaired,100.0
+Sheung Shui,North,High,Visually Impaired,100.0
+Lo Wu,North,Low,Visually Impaired,100.0
+Lok Ma Chau,Yuen Long,Low,Visually Impaired,100.0
+East Tsim Sha Tsui,Yau Tsim Mong,Medium,Visually Impaired,82.14285714285714
+Sai Ying Pun,Central and Western,Medium,Visually Impaired,82.14285714285714
+HKU,Central and Western,Medium,Visually Impaired,82.14285714285714
+Kennedy Town,Central and Western,Low,Visually Impaired,82.14285714285714
+Ho Man Tin,Kowloon City,Medium,Visually Impaired,100.0
+Whampoa,Kowloon City,Medium,Visually Impaired,82.14285714285714
+Ocean Park,Southern,High,Visually Impaired,75.0
+Wong Chuk Hang,Southern,High,Visually Impaired,75.0
+Lei Tung,Southern,High,Visually Impaired,75.0
+South Horizons,Southern,High,Visually Impaired,75.0
+Hin Keng,Sha Tin,Low,Visually Impaired,82.14285714285714
+Kai Tak,Kowloon City,Medium,Visually Impaired,82.14285714285714
+Sung Wong Toi,Kowloon City,Medium,Visually Impaired,82.14285714285714
+To Kwa Wan,Kowloon City,Medium,Visually Impaired,82.14285714285714
+Exhibition Centre,Wan Chai,Medium,Visually Impaired,82.14285714285714
+Che Kung Temple,Sha Tin,Medium,Visually Impaired,100.0
+Sha Tin Wai,Sha Tin,Low,Visually Impaired,100.0
+City One,Sha Tin,Low,Visually Impaired,100.0
+Shek Mun,Sha Tin,Low,Visually Impaired,100.0
+Tai Shui Hang,Sha Tin,Low,Visually Impaired,100.0
+Heng On,Sha Tin,Low,Visually Impaired,100.0
+Ma On Shan,Sha Tin,Low,Visually Impaired,100.0
+Wu Kai Sha,Sha Tin,Low,Visually Impaired,100.0
+Austin,Yau Tsim Mong,Medium,Visually Impaired,82.14285714285714
+Tsuen Wan West,Tsuen Wan,High,Visually Impaired,82.14285714285714
+Kam Sheung Road,Yuen Long,Medium,Visually Impaired,82.14285714285714
+Yuen Long,Yuen Long,Medium,Visually Impaired,82.14285714285714
+Long Ping,Yuen Long,Medium,Visually Impaired,82.14285714285714
+Tin Shui Wai,Yuen Long,Medium,Visually Impaired,82.14285714285714
+Siu Hong,Tuen Mun,High,Visually Impaired,82.14285714285714
+Tuen Mun,Tuen Mun,High,Visually Impaired,82.14285714285714
+Central,Central and Western,Medium,Mobility Impaired,60.0
+Admiralty,Central and Western,Medium,Mobility Impaired,60.0
+Tsim Sha Tsui,Yau Tsim Mong,Low,Mobility Impaired,60.0
+Jordan,Yau Tsim Mong,Low,Mobility Impaired,44.0
+Yau Ma Tei,Yau Tsim Mong,Low,Mobility Impaired,60.0
+Mong Kok,Yau Tsim Mong,Medium,Mobility Impaired,60.0
+Shek Kip Mei,Sham Shui Po,Medium,Mobility Impaired,44.0
+Kowloon Tong,Kowloon City,Medium,Mobility Impaired,68.0
+Lok Fu,Wong Tai Sin,Medium,Mobility Impaired,44.0
+Wong Tai Sin,Wong Tai Sin,High,Mobility Impaired,44.0
+Diamond Hill,Wong Tai Sin,Medium,Mobility Impaired,60.0
+Choi Hung,Wong Tai Sin,High,Mobility Impaired,44.0
+Kowloon Bay,Kwun Tong,Low,Mobility Impaired,44.0
+Ngau Tau Kok,Kwun Tong,Medium,Mobility Impaired,60.0
+Kwun Tong,Kwun Tong,High,Mobility Impaired,44.0
+Prince Edward,Yau Tsim Mong,Low,Mobility Impaired,60.0
+Sham Shui Po,Sham Shui Po,Medium,Mobility Impaired,44.0
+Cheung Sha Wan,Sham Shui Po,Medium,Mobility Impaired,44.0
+Lai Chi Kok,Sham Shui Po,Medium,Mobility Impaired,44.0
+Mei Foo,Sham Shui Po,Medium,Mobility Impaired,64.0
+Lai King,Kwai Tsing,High,Mobility Impaired,60.0
+Kwai Fong,Kwai Tsing,High,Mobility Impaired,44.0
+Kwai Hing,Kwai Tsing,High,Mobility Impaired,44.0
+Tai Wo Hau,Tsuen Wan,Medium,Mobility Impaired,44.0
+Tsuen Wan,Tsuen Wan,High,Mobility Impaired,44.0
+Sheung Wan,Central and Western,Medium,Mobility Impaired,60.0
+Wan Chai,Wan Chai,High,Mobility Impaired,44.0
+Causeway Bay,Wan Chai,High,Mobility Impaired,44.0
+Tin Hau,Wan Chai,Medium,Mobility Impaired,44.0
+Fortress Hill,Eastern,Low,Mobility Impaired,44.0
+North Point,Eastern,High,Mobility Impaired,60.0
+Quarry Bay,Eastern,Medium,Mobility Impaired,60.0
+Tai Koo,Eastern,High,Mobility Impaired,52.0
+Sai Wan Ho,Eastern,Low,Mobility Impaired,44.0
+Shau Kei Wan,Eastern,High,Mobility Impaired,44.0
+Heng Fa Chuen,Eastern,Low,Mobility Impaired,44.0
+Chai Wan,Eastern,Medium,Mobility Impaired,44.0
+Lam Tin,Kwun Tong,Medium,Mobility Impaired,52.0
+Hong Kong,Central and Western,Medium,Mobility Impaired,64.0
+Kowloon,Yau Tsim Mong,Medium,Mobility Impaired,64.0
+Olympic,Yau Tsim Mong,Medium,Mobility Impaired,44.0
+Tsing Yi,Kwai Tsing,High,Mobility Impaired,64.0
+Tung Chung,Islands,High,Mobility Impaired,44.0
+Airport,Islands,High,Mobility Impaired,20.0
+Yau Tong,Kwun Tong,Medium,Mobility Impaired,60.0
+Tiu Keng Leng,Sai Kung,Medium,Mobility Impaired,60.0
+Tseung Kwan O,Sai Kung,Medium,Mobility Impaired,44.0
+Hang Hau,Sai Kung,Medium,Mobility Impaired,44.0
+Po Lam,Sai Kung,Medium,Mobility Impaired,44.0
+Nam Cheong,Sham Shui Po,Medium,Mobility Impaired,60.0
+Sunny Bay,Tsuen Wan,Low,Mobility Impaired,60.0
+Disneyland Resort,Tsuen Wan,Low,Mobility Impaired,40.0
+AsiaWorld-Expo,Islands,Medium,Mobility Impaired,44.0
+LOHAS Park,Sai Kung,Medium,Mobility Impaired,44.0
+Hung Hom,Yau Tsim Mong,Low,Mobility Impaired,80.0
+Mong Kok East,Yau Tsim Mong,Low,Mobility Impaired,60.0
+Tai Wai,Sha Tin,Medium,Mobility Impaired,60.0
+Sha Tin,Sha Tin,Medium,Mobility Impaired,60.0
+Fo Tan,Sha Tin,Low,Mobility Impaired,60.0
+University,Sha Tin,Low,Mobility Impaired,60.0
+Tai Po Market,Tai Po,High,Mobility Impaired,60.0
+Tai Wo,Tai Po,High,Mobility Impaired,60.0
+Fanling,North,Medium,Mobility Impaired,60.0
+Sheung Shui,North,High,Mobility Impaired,60.0
+Lo Wu,North,Low,Mobility Impaired,80.0
+Lok Ma Chau,Yuen Long,Low,Mobility Impaired,80.0
+East Tsim Sha Tsui,Yau Tsim Mong,Medium,Mobility Impaired,60.0
+Sai Ying Pun,Central and Western,Medium,Mobility Impaired,60.0
+HKU,Central and Western,Medium,Mobility Impaired,60.0
+Kennedy Town,Central and Western,Low,Mobility Impaired,60.0
+Ho Man Tin,Kowloon City,Medium,Mobility Impaired,60.0
+Whampoa,Kowloon City,Medium,Mobility Impaired,60.0
+Ocean Park,Southern,High,Mobility Impaired,60.0
+Wong Chuk Hang,Southern,High,Mobility Impaired,60.0
+Lei Tung,Southern,High,Mobility Impaired,60.0
+South Horizons,Southern,High,Mobility Impaired,60.0
+Hin Keng,Sha Tin,Low,Mobility Impaired,60.0
+Kai Tak,Kowloon City,Medium,Mobility Impaired,60.0
+Sung Wong Toi,Kowloon City,Medium,Mobility Impaired,60.0
+To Kwa Wan,Kowloon City,Medium,Mobility Impaired,60.0
+Exhibition Centre,Wan Chai,Medium,Mobility Impaired,60.0
+Che Kung Temple,Sha Tin,Medium,Mobility Impaired,60.0
+Sha Tin Wai,Sha Tin,Low,Mobility Impaired,60.0
+City One,Sha Tin,Low,Mobility Impaired,60.0
+Shek Mun,Sha Tin,Low,Mobility Impaired,60.0
+Tai Shui Hang,Sha Tin,Low,Mobility Impaired,60.0
+Heng On,Sha Tin,Low,Mobility Impaired,60.0
+Ma On Shan,Sha Tin,Low,Mobility Impaired,60.0
+Wu Kai Sha,Sha Tin,Low,Mobility Impaired,60.0
+Austin,Yau Tsim Mong,Medium,Mobility Impaired,60.0
+Tsuen Wan West,Tsuen Wan,High,Mobility Impaired,60.0
+Kam Sheung Road,Yuen Long,Medium,Mobility Impaired,60.0
+Yuen Long,Yuen Long,Medium,Mobility Impaired,60.0
+Long Ping,Yuen Long,Medium,Mobility Impaired,60.0
+Tin Shui Wai,Yuen Long,Medium,Mobility Impaired,60.0
+Siu Hong,Tuen Mun,High,Mobility Impaired,60.0
+Tuen Mun,Tuen Mun,High,Mobility Impaired,60.0
+Central,Central and Western,Medium,System Accessibility,25.64102564102564
+Admiralty,Central and Western,Medium,System Accessibility,38.46153846153847
+Tsim Sha Tsui,Yau Tsim Mong,Low,System Accessibility,38.46153846153847
+Jordan,Yau Tsim Mong,Low,System Accessibility,25.64102564102564
+Yau Ma Tei,Yau Tsim Mong,Low,System Accessibility,38.46153846153847
+Mong Kok,Yau Tsim Mong,Medium,System Accessibility,25.64102564102564
+Shek Kip Mei,Sham Shui Po,Medium,System Accessibility,46.15384615384615
+Kowloon Tong,Kowloon City,Medium,System Accessibility,46.15384615384615
+Lok Fu,Wong Tai Sin,Medium,System Accessibility,20.51282051282051
+Wong Tai Sin,Wong Tai Sin,High,System Accessibility,38.46153846153847
+Diamond Hill,Wong Tai Sin,Medium,System Accessibility,46.15384615384615
+Choi Hung,Wong Tai Sin,High,System Accessibility,20.51282051282051
+Kowloon Bay,Kwun Tong,Low,System Accessibility,58.97435897435898
+Ngau Tau Kok,Kwun Tong,Medium,System Accessibility,20.51282051282051
+Kwun Tong,Kwun Tong,High,System Accessibility,38.46153846153847
+Prince Edward,Yau Tsim Mong,Low,System Accessibility,38.46153846153847
+Sham Shui Po,Sham Shui Po,Medium,System Accessibility,38.46153846153847
+Cheung Sha Wan,Sham Shui Po,Medium,System Accessibility,25.64102564102564
+Lai Chi Kok,Sham Shui Po,Medium,System Accessibility,51.28205128205128
+Mei Foo,Sham Shui Po,Medium,System Accessibility,46.15384615384615
+Lai King,Kwai Tsing,High,System Accessibility,25.64102564102564
+Kwai Fong,Kwai Tsing,High,System Accessibility,20.51282051282051
+Kwai Hing,Kwai Tsing,High,System Accessibility,33.33333333333333
+Tai Wo Hau,Tsuen Wan,Medium,System Accessibility,25.64102564102564
+Tsuen Wan,Tsuen Wan,High,System Accessibility,33.33333333333333
+Sheung Wan,Central and Western,Medium,System Accessibility,33.33333333333333
+Wan Chai,Wan Chai,High,System Accessibility,25.64102564102564
+Causeway Bay,Wan Chai,High,System Accessibility,25.64102564102564
+Tin Hau,Wan Chai,Medium,System Accessibility,25.64102564102564
+Fortress Hill,Eastern,Low,System Accessibility,20.51282051282051
+North Point,Eastern,High,System Accessibility,25.64102564102564
+Quarry Bay,Eastern,Medium,System Accessibility,20.51282051282051
+Tai Koo,Eastern,High,System Accessibility,25.64102564102564
+Sai Wan Ho,Eastern,Low,System Accessibility,25.64102564102564
+Shau Kei Wan,Eastern,High,System Accessibility,33.33333333333333
+Heng Fa Chuen,Eastern,Low,System Accessibility,25.64102564102564
+Chai Wan,Eastern,Medium,System Accessibility,25.64102564102564
+Lam Tin,Kwun Tong,Medium,System Accessibility,20.51282051282051
+Hong Kong,Central and Western,Medium,System Accessibility,25.64102564102564
+Kowloon,Yau Tsim Mong,Medium,System Accessibility,33.33333333333333
+Olympic,Yau Tsim Mong,Medium,System Accessibility,38.46153846153847
+Tsing Yi,Kwai Tsing,High,System Accessibility,25.64102564102564
+Tung Chung,Islands,High,System Accessibility,28.205128205128204
+Airport,Islands,High,System Accessibility,7.6923076923076925
+Yau Tong,Kwun Tong,Medium,System Accessibility,46.15384615384615
+Tiu Keng Leng,Sai Kung,Medium,System Accessibility,20.51282051282051
+Tseung Kwan O,Sai Kung,Medium,System Accessibility,20.51282051282051
+Hang Hau,Sai Kung,Medium,System Accessibility,20.51282051282051
+Po Lam,Sai Kung,Medium,System Accessibility,20.51282051282051
+Nam Cheong,Sham Shui Po,Medium,System Accessibility,25.64102564102564
+Sunny Bay,Tsuen Wan,Low,System Accessibility,20.51282051282051
+Disneyland Resort,Tsuen Wan,Low,System Accessibility,20.51282051282051
+AsiaWorld-Expo,Islands,Medium,System Accessibility,20.51282051282051
+LOHAS Park,Sai Kung,Medium,System Accessibility,38.46153846153847
+Hung Hom,Yau Tsim Mong,Low,System Accessibility,46.15384615384615
+Mong Kok East,Yau Tsim Mong,Low,System Accessibility,20.51282051282051
+Tai Wai,Sha Tin,Medium,System Accessibility,20.51282051282051
+Sha Tin,Sha Tin,Medium,System Accessibility,28.205128205128204
+Fo Tan,Sha Tin,Low,System Accessibility,33.33333333333333
+University,Sha Tin,Low,System Accessibility,41.02564102564102
+Tai Po Market,Tai Po,High,System Accessibility,20.51282051282051
+Tai Wo,Tai Po,High,System Accessibility,25.64102564102564
+Fanling,North,Medium,System Accessibility,41.02564102564102
+Sheung Shui,North,High,System Accessibility,28.205128205128204
+Lo Wu,North,Low,System Accessibility,33.33333333333333
+Lok Ma Chau,Yuen Long,Low,System Accessibility,33.33333333333333
+East Tsim Sha Tsui,Yau Tsim Mong,Medium,System Accessibility,46.15384615384615
+Sai Ying Pun,Central and Western,Medium,System Accessibility,33.33333333333333
+HKU,Central and Western,Medium,System Accessibility,33.33333333333333
+Kennedy Town,Central and Western,Low,System Accessibility,33.33333333333333
+Ho Man Tin,Kowloon City,Medium,System Accessibility,33.33333333333333
+Whampoa,Kowloon City,Medium,System Accessibility,33.33333333333333
+Ocean Park,Southern,High,System Accessibility,33.33333333333333
+Wong Chuk Hang,Southern,High,System Accessibility,33.33333333333333
+Lei Tung,Southern,High,System Accessibility,33.33333333333333
+South Horizons,Southern,High,System Accessibility,25.64102564102564
+Hin Keng,Sha Tin,Low,System Accessibility,28.205128205128204
+Kai Tak,Kowloon City,Medium,System Accessibility,25.64102564102564
+Sung Wong Toi,Kowloon City,Medium,System Accessibility,46.15384615384615
+To Kwa Wan,Kowloon City,Medium,System Accessibility,33.33333333333333
+Exhibition Centre,Wan Chai,Medium,System Accessibility,33.33333333333333
+Che Kung Temple,Sha Tin,Medium,System Accessibility,33.33333333333333
+Sha Tin Wai,Sha Tin,Low,System Accessibility,20.51282051282051
+City One,Sha Tin,Low,System Accessibility,20.51282051282051
+Shek Mun,Sha Tin,Low,System Accessibility,20.51282051282051
+Tai Shui Hang,Sha Tin,Low,System Accessibility,25.64102564102564
+Heng On,Sha Tin,Low,System Accessibility,20.51282051282051
+Ma On Shan,Sha Tin,Low,System Accessibility,20.51282051282051
+Wu Kai Sha,Sha Tin,Low,System Accessibility,33.33333333333333
+Austin,Yau Tsim Mong,Medium,System Accessibility,33.33333333333333
+Tsuen Wan West,Tsuen Wan,High,System Accessibility,25.64102564102564
+Kam Sheung Road,Yuen Long,Medium,System Accessibility,28.205128205128204
+Yuen Long,Yuen Long,Medium,System Accessibility,46.15384615384615
+Long Ping,Yuen Long,Medium,System Accessibility,33.33333333333333
+Tin Shui Wai,Yuen Long,Medium,System Accessibility,46.15384615384615
+Siu Hong,Tuen Mun,High,System Accessibility,41.02564102564102
+Tuen Mun,Tuen Mun,High,System Accessibility,33.33333333333333
