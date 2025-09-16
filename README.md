@@ -31,9 +31,7 @@ All data sourced from [Hong Kong Open Data](https://data.gov.hk/).
 
 ## Data analysis methodology
 
-<p align="center">
-  <img src="images/Flowchart.png" width="60%">
-</p>
+![](images/Flowchart.png)
 
 The goal of this project is to generate a priority index that reflects the supply-demand gap between the current provision of accessibility facilities and the needs of local elderly people. Such index is derived from the following two components:
 
@@ -64,9 +62,7 @@ Station-specific demand from general population is proxied by the size of the st
 
 ## 1. Stations with high priority for accessibility upgrades tend to be the bigger ones within their districts.
 
-<p align="center">
-  <img src="images/map.png" width="60%">
-</p>
+![](images/map.png)
 
 - Warmer colours (higher priority index) often coincide with larger bubbles (bigger stations). This means high-priority sites are frequently the stations that carry a larger share of local trips.
 - No concentration of high priority stations in one district.
@@ -74,9 +70,7 @@ Station-specific demand from general population is proxied by the size of the st
 
 ## 2. Stations with high priority index tend to be in more remote districts, with less MTR coverage.
 
-<p align="center">
-  <img src="images/mosaic_district_priority.png" width="60%">
-</p>
+![](images/mosaic_district_priority.png)
  
 - Stations are categorized into three priority groups based on their priority index: if the priority index is within the 25% percentile, the station is in the low priority group; if the priority index is greater than the 75% percentile, the station is in the high priority group; otherwise, the station is in the medium priority group.
 - Higher shares of high-priority stations are seen in Tai Po, Tuen Mun, Islands, Southern, and Kwai Tsing — districts with fewer stations and located further from the central area. No single district “owns” all the priority stations, but the pattern skews to New Territories North/West and outlying areas.
@@ -84,10 +78,8 @@ Station-specific demand from general population is proxied by the size of the st
 
 ## 2. High priority stations does not necessarily mean they have the least accessibility facility.
 
-<p align="center">
-  <img src="images/facility_priority.png" width="60%">
-  <img src="images/top10_priority_tbl.png" width="45%">
-</p>
+![](images/facility_priority.png)
+![](images/top10_priority_tbl.png)
 
 - Facility score (0–100) is fairly tight across the network; most stations sit in the 50–60 range, with one clear under-performer being Airport (≈33). Many of the Top10 high-priority stations also sit around mid-range facility scores. 
 - The reason why stations with mid-range facility scores are still in high priority group is because priority index also considers the station's relative demand within its district. Stations serving more riders and larger usage share (station size) can be high priority, even if their facilities are not the worst.
@@ -95,9 +87,7 @@ Station-specific demand from general population is proxied by the size of the st
 
 ## 4. System accessibility facilities lag behind other facilities in terms of availability.
 
-<p align="center">
-  <img src="images/facility_score.png" width="60%">
-</p>
+![](images/facility_score.png)
 
 - Across all priority groups, system accessibility facilities are the least available, followed by mobility impaired. While this suggests uniform accessibility across all facilities, the lack of system accessibility facilities are systematic.
 - **Implication**: The fastest equity gains are likely to come from system accessibility fixes, i.e, redundant lifts/escalators, etc.
